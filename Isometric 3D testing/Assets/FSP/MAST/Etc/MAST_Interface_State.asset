@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5fd28d118e3f54681cbd57341ebc04, type: 3}
   m_Name: MAST_Interface_State
   m_EditorClassIdentifier: 
-  gridExists: 0
+  gridExists: 1
   selectedDrawToolIndex: -1
   selectedItemIndex: -1
-  lastPrefabPath: D:/Unity/Projects/Isometric 3D testing/Assets/Platformer prefabs
+  lastPrefabPath: D:/UnityGitHub/UnityGame/Isometric 3D testing/Assets/Platformer
+    prefabs
   prefabs:
   - {fileID: 6415535769340581911, guid: 5d91b3bfe69c4eb4a8deb83758de3b3c, type: 3}
   - {fileID: 3388825270846533225, guid: f71f4559179b55c45bb639ba81e19a86, type: 3}
@@ -23,6 +24,7 @@ MonoBehaviour:
   - {fileID: 1959607092872345181, guid: 778e68fbc8266b44e808e73a01b7363a, type: 3}
   - {fileID: 3408974736964574333, guid: 8fdf580dd6c7a384093be6e01e9e1089, type: 3}
   - {fileID: 3001781332607090245, guid: 443bcaffa3e8078499c25bf8d75fcc35, type: 3}
+  - {fileID: 3563801499367198144, guid: f083e45e8850ee4478a3c6a2e1f35cb7, type: 3}
   - {fileID: 9161586800466855132, guid: 5b7b8e93fedf7ec479247feda4713336, type: 3}
   paletteItemTooltip:
   - barrel
@@ -31,5 +33,6 @@ MonoBehaviour:
   - blockSlope
   - flowers
   - grassBlock
+  - Key
   - treePine
   columnCount: 4
