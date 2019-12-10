@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
 
-public class PlayerController : MonoBehaviour
+public class PlayerActions : MonoBehaviour
 {
     Camera cam;
     NavMeshAgent agent;
@@ -18,6 +18,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MovePlayer();
+        PickUpItem();
+
+    }
+
+    void MovePlayer()
+    {
         if (Input.GetMouseButton(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -28,24 +35,27 @@ public class PlayerController : MonoBehaviour
                 agent.SetDestination(hit.point);
             }
         }
+    }
 
+    void PickUpItem()
+    {
         if (Input.GetMouseButtonDown(1))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-
             if (Physics.Raycast(ray, out hit, 100))
             {
-                Item clickedItem = hit.collider.GetComponent<Item>();
-                Debug.Log(clickedItem);
+                IInventoryItem clickedItem = hit.collider.GetComponent<IInventoryItem>();           
                 if (clickedItem != null)
                 {
                     agent.SetDestination(hit.point);
-                    clickedItem.hasBeenClicked = true;
-                }
+                    if (clickedItem.playerDistance <= clickedItem.pickUpRadius)
+                    {
+                        Inventory.instance.AddItem(clickedItem);
+                    }
 
+                }
             }
         }
-
     }
 }

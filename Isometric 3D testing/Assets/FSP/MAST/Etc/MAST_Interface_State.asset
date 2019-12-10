@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MAST_Interface_State
   m_EditorClassIdentifier: 
   gridExists: 1
-  selectedDrawToolIndex: -1
+  selectedDrawToolIndex: 0
   selectedItemIndex: -1
   lastPrefabPath: D:/UnityGitHub/UnityGame/Isometric 3D testing/Assets/Platformer
     prefabs
@@ -25,6 +25,7 @@ MonoBehaviour:
   - {fileID: 3408974736964574333, guid: 8fdf580dd6c7a384093be6e01e9e1089, type: 3}
   - {fileID: 3001781332607090245, guid: 443bcaffa3e8078499c25bf8d75fcc35, type: 3}
   - {fileID: 3563801499367198144, guid: f083e45e8850ee4478a3c6a2e1f35cb7, type: 3}
+  - {fileID: 189452687803642992, guid: 10a78f7888fa2c946ba6408796a6b55d, type: 3}
   - {fileID: 9161586800466855132, guid: 5b7b8e93fedf7ec479247feda4713336, type: 3}
   paletteItemTooltip:
   - barrel
@@ -34,5 +35,6 @@ MonoBehaviour:
   - flowers
   - grassBlock
   - Key
+  - platform
   - treePine
-  columnCount: 4
+  columnCount: 3

@@ -5,49 +5,41 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
 
+    int space = 20;
+
+    public List<IInventoryItem> items = new List<IInventoryItem>();
+
+    public delegate void OnItemPickedCallback();
+    public OnItemPickedCallback onItemPickedCallback;
+
     #region Singleton
-
     public static Inventory instance;
-
     void Awake()
     {
         if (instance != null)
         {
-            Debug.LogWarning("More than one instance of Inventory found");
-            return;
+            Debug.Log("More than one inventory instance!");
         }
         instance = this;
-    }
-
+    } 
     #endregion
 
-    public int space = 20;
-    public List<Item> items = new List<Item>();
-
-    public delegate void OnItemPicked();
-    public OnItemPicked onItemPickedCallback; //To update the Inventory UI when an item is picked or removed
-
-    // Start is called before the first frame update
-    public void Add(Item item)
+    public void AddItem(IInventoryItem item)
     {
-        if (items.Count < 20)
+        if (items.Count < space)
         {
             items.Add(item);
-            if (onItemPickedCallback != null)
-            {
-                onItemPickedCallback.Invoke();
-            }
+            item.OnPickUp();
+        }
+        else
+        {
+            Debug.Log("Not enough space");
+            return;
         }
     }
 
-    public void Remove(Item item)
+    public void RemoveItem(IInventoryItem item)
     {
-
         items.Remove(item);
-        if (onItemPickedCallback != null)
-        {
-            onItemPickedCallback.Invoke();
-        }
-
     }
 }

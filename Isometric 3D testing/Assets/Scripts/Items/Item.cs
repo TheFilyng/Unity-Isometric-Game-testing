@@ -2,45 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : ScriptableObject
+public class Item : MonoBehaviour, IInventoryItem
 {
+    public string _name;
+    public string Name
+    {
+        get
+        {
+            return _name;
+        }
+    }
+    public Sprite _icon;
+    public Sprite icon
+    {
+        get
+        {
+            return _icon;
+        }
+    }
+    public float _pickUpRadius = 1f;
+    public float pickUpRadius
+    {
+        get
+        {
+            return _pickUpRadius;
+        }
+    }
 
-    public Transform player;
-    Transform itemTransform;
-
-    public Sprite icon;
-    new public string name;
-
-    bool isPickedUp;
-    public bool isConsumable;
-    public bool isStackable;
-
-    public float pickUpRadius;
-    public bool hasBeenClicked;
-
-    float distance;
     
-    // Start is called before the first frame update
+
+    public float _playerDistance;
+    public float playerDistance
+    {
+        get
+        {
+            return _playerDistance;
+        }
+    }
+
+    public void OnPickUp()
+    {
+        Debug.Log("You picked up " + Name);
+        Destroy(gameObject);
+    }
+
     void Start()
     {
-        pickUpRadius = 1f;
-        player = GameObject.Find("Player").transform;
-        hasBeenClicked = false;
+        _playerDistance = Vector3.Distance(GameObject.Find("Player").transform.position, transform.position);
     }
 
-    public virtual void Use()
+    // Update is called once per frame
+    void Update()
     {
-
-        //Something happens
-        Debug.Log("You have used " + name);
-
+        _playerDistance = Vector3.Distance(GameObject.Find("Player").transform.position, transform.position);
     }
 
-
-    private void OnDrawGizmosSelected()
+    public void OnDrawGizmosSelected()
     {
-        
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(itemTransform.position, pickUpRadius);
+        Gizmos.DrawWireSphere(transform.position, pickUpRadius);
     }
 }
