@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MAST_Interface_State
   m_EditorClassIdentifier: 
   gridExists: 1
-  selectedDrawToolIndex: 0
+  selectedDrawToolIndex: -1
   selectedItemIndex: -1
   lastPrefabPath: D:/UnityGitHub/UnityGame/Isometric 3D testing/Assets/Platformer
     prefabs
@@ -22,6 +22,8 @@ MonoBehaviour:
   - {fileID: 3388825270846533225, guid: f71f4559179b55c45bb639ba81e19a86, type: 3}
   - {fileID: 3088584459009212485, guid: 633179099e9d22949a976525216e1c95, type: 3}
   - {fileID: 1959607092872345181, guid: 778e68fbc8266b44e808e73a01b7363a, type: 3}
+  - {fileID: 6445126629641901364, guid: c6e40a77966ada24fab6b00172ac3695, type: 3}
+  - {fileID: 4680720040328298178, guid: bd2abf53416db3c4b9da093d71094663, type: 3}
   - {fileID: 3408974736964574333, guid: 8fdf580dd6c7a384093be6e01e9e1089, type: 3}
   - {fileID: 3001781332607090245, guid: 443bcaffa3e8078499c25bf8d75fcc35, type: 3}
   - {fileID: 3563801499367198144, guid: f083e45e8850ee4478a3c6a2e1f35cb7, type: 3}
@@ -32,6 +34,8 @@ MonoBehaviour:
   - blockCornerLarge
   - blockHexagonLow
   - blockSlope
+  - bridge
+  - bridgeBroken
   - flowers
   - grassBlock
   - Key

@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
 
     int space = 20;
 
-    public List<IInventoryItem> items = new List<IInventoryItem>();
+    public List<Item> items = new List<Item>();
 
     public delegate void OnItemPickedCallback();
     public OnItemPickedCallback onItemPickedCallback;
@@ -19,12 +19,13 @@ public class Inventory : MonoBehaviour
         if (instance != null)
         {
             Debug.Log("More than one inventory instance!");
+            return;
         }
         instance = this;
     } 
     #endregion
 
-    public void AddItem(IInventoryItem item)
+    public void AddItem(Item item)
     {
         if (items.Count < space)
         {
@@ -38,7 +39,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void RemoveItem(IInventoryItem item)
+    public void RemoveItem(Item item)
     {
         items.Remove(item);
     }

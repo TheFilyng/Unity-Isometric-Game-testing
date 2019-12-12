@@ -45,15 +45,12 @@ public class PlayerActions : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100))
             {
-                IInventoryItem clickedItem = hit.collider.GetComponent<IInventoryItem>();           
+                Item clickedItem = hit.collider.GetComponent<Item>();
                 if (clickedItem != null)
                 {
                     agent.SetDestination(hit.point);
-                    if (clickedItem.playerDistance <= clickedItem.pickUpRadius)
-                    {
-                        Inventory.instance.AddItem(clickedItem);
-                    }
-
+                    Inventory.instance.AddItem(clickedItem);
+                    clickedItem.wasClicked = true;
                 }
             }
         }

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2823089102136802196}
   - component: {fileID: 6775211020610654988}
-  - component: {fileID: 3190015325416748378}
   - component: {fileID: 2964748734495713326}
+  - component: {fileID: 3624903369533961310}
   m_Layer: 0
   m_Name: platform
   m_TagString: Untagged
@@ -61,22 +61,6 @@ MonoBehaviour:
     posMin: {x: -0.5, y: -0.1, z: -0.5}
     posMax: {x: 0.5, y: 0.1, z: 0.5}
   includeInMerge: 1
---- !u!114 &3190015325416748378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189452687803642992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41d0241afb4880e4fa43d2980f49f735, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: Table
-  _icon: {fileID: 0}
-  _pickUpRadius: 1
-  _playerDistance: 0
 --- !u!65 &2964748734495713326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -90,6 +74,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.07, y: 2.97, z: 7.8}
   m_Center: {x: 0, y: 0.59, z: 0}
+--- !u!114 &3624903369533961310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189452687803642992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d0241afb4880e4fa43d2980f49f735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Platform
+  icon: {fileID: 0}
+  pickUpRadius: 1
+  playerDistance: 0
 --- !u!1 &7635968001742955344
 GameObject:
   m_ObjectHideFlags: 0

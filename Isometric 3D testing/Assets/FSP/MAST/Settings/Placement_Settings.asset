@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Placement_Settings
   m_EditorClassIdentifier: 
   targetParentName: MAST_Holder
-  snapToGrid: 0
+  snapToGrid: 1
   offset:
     overridePrefab: 0
     pos: {x: 0, y: 0.15, z: 0}

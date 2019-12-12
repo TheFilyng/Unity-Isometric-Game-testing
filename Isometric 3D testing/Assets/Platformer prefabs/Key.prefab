@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7771361742776099095}
   - component: {fileID: -2804176580704833142}
   - component: {fileID: 1859487833286318935}
-  - component: {fileID: 1796625904554562131}
+  - component: {fileID: 4561500452455725441}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -74,7 +74,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06, y: 0.46, z: 0.57}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1796625904554562131
+--- !u!114 &4561500452455725441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,10 +86,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d0241afb4880e4fa43d2980f49f735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Key
-  _icon: {fileID: 0}
-  _pickUpRadius: 1
-  _playerDistance: 0
+  name: Key
+  icon: {fileID: 0}
+  pickUpRadius: 1
+  playerDistance: 0
+  wasClicked: 0
 --- !u!1 &9021440975225867466
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +148,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8863482124825134610, guid: 7f1cd50b03bb9224e87f99b25c78a40e, type: 3}
+  - {fileID: 2100000, guid: aa790feda4ab11f4aa8dc2a970e6100b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

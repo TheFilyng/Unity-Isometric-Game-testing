@@ -2,59 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour, IInventoryItem
+public class Item : MonoBehaviour
 {
-    public string _name;
-    public string Name
-    {
-        get
-        {
-            return _name;
-        }
-    }
-    public Sprite _icon;
-    public Sprite icon
-    {
-        get
-        {
-            return _icon;
-        }
-    }
-    public float _pickUpRadius = 1f;
-    public float pickUpRadius
-    {
-        get
-        {
-            return _pickUpRadius;
-        }
-    }
+    new public string name;
+    public Sprite icon;
+    public float pickUpRadius = 1f;
+    public float playerDistance;
 
-    
+    public bool wasClicked = false;
 
-    public float _playerDistance;
-    public float playerDistance
+    Material material;
+
+    public virtual void OnPickUp()
     {
-        get
+        if (playerDistance <= pickUpRadius && wasClicked)
         {
-            return _playerDistance;
+            Debug.Log("You picked up " + name);
+            Destroy(gameObject);
         }
-    }
-
-    public void OnPickUp()
-    {
-        Debug.Log("You picked up " + Name);
-        Destroy(gameObject);
     }
 
     void Start()
     {
-        _playerDistance = Vector3.Distance(GameObject.Find("Player").transform.position, transform.position);
+        material = GetComponentInChildren<MeshRenderer>().material;
+        playerDistance = Vector3.Distance(GameObject.Find("Player").transform.position, transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        _playerDistance = Vector3.Distance(GameObject.Find("Player").transform.position, transform.position);
+        playerDistance = Vector3.Distance(GameObject.Find("Player").transform.position, transform.position);
+        OnPickUp();
+    }
+
+    private void OnMouseOver()
+    {
+        material.SetFloat("_OutlineWidth", 0.051f);
+    }
+
+    private void OnMouseExit()
+    {
+        material.SetFloat("_OutlineWidth", 0f);
     }
 
     public void OnDrawGizmosSelected()
